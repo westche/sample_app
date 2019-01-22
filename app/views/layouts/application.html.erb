@@ -11,20 +11,16 @@
   <body>
 
     <!-- Navigation Bar -->
-
-  <div class="navbar">
-  <div class="navbar-inner">
-
-  <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
+<!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-      <a class="brand"> <%= link_to "One Month Rails", root_path, class: "navbar-brand" %> </a>
-
-    <ul class="nav">
+    <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
       <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
+   
     </ul>
-    <ul class="nav">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
       <% else %>
@@ -33,7 +29,7 @@
       <% end %>
     </ul>
   </div>
-</nav>
+    </nav>
 
 <!-- Flash Messages -->
 <% flash.each do |name, message|%>
