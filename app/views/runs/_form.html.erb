@@ -1,0 +1,43 @@
+<%= form_with(model: run, local: true) do |form| %>
+  <% if run.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(run.errors.count, "error") %> prohibited this run from being saved:</h2>
+
+      <ul>
+      <% run.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+    <div class="form-group">
+    <%= form.label :Run_Type %>
+    <%= form.text_field :Run_Type, class: "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :Location %>
+    <%= form.text_field :Location, class: "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :Start_Time %>
+    <%= form.time_select :Start_Time, class: "form-control" %>
+  </div>
+
+ <div class="form-group">
+    <%= form.label :Pace %>
+    <%= form.text_field :Pace, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Miles %>
+    <%= form.text_field :Miles, class: "form-control" %>
+  </div>
+
+ <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

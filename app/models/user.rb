@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :rememberable, :validatable
 
   has_many :tweets
+  has_many :runs
+
 end

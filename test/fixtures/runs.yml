@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  Run_Type: MyString
+  Location: MyString
+  Start_Time: 2019-01-27 17:18:31
+  Pace: 9.99
+  Miles: 9.99
+
+two:
+  user: two
+  Run_Type: MyString
+  Location: MyString
+  Start_Time: 2019-01-27 17:18:31
+  Pace: 9.99
+  Miles: 9.99
