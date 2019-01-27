@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_221826) do
+ActiveRecord::Schema.define(version: 2019_01_27_230137) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_221826) do
     t.decimal "Miles"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "Run_Date"
     t.index ["user_id"], name: "index_runs_on_user_id"
   end
 
