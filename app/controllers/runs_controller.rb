@@ -61,6 +61,6 @@ def update
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def run_params
-      params.require(:run).permit(:user_id, :Run_Type, :Location, :Start_Time, :Pace, :Miles)
+      params.require(:run).permit(:user_id, :Run_Type, :Location, :Start_Time, :Pace, :Miles, :Run_Date)
     end
 end
