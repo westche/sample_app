@@ -1,8 +1,9 @@
-
 <div class="container">
-        <p>
+  <div class="card">
+  <div class="card-body">
+    <p>
         <strong>User:</strong>
-        <%= @run.user %>
+        <%= @run.user.email %>
       </p>
 
       <p>
@@ -35,8 +36,14 @@
       </p>
 
       <% if @run.user == current_user %>
-      <%= link_to 'Edit', edit_run_path(@run) %> |
+      <%= link_to 'Edit', edit_run_path(@run), class: "card-link" %> |
+       <%= link_to 'Delete', @run, method: :delete, data: { confirm: 'Are you sure?' } %> |
       <% end %>
       <%= link_to 'Back', runs_path %>
-
 </div>
+</div>       
+</div>
+
+
+
+

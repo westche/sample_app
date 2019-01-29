@@ -5,18 +5,14 @@
   <div class="container">
     <h1 class="display-4">Ready.Set.Go.</h1>
     <p class="lead">Discover or Post Runs near you.</p>
-     <% if user_signed_in? %>
-              <%= link_to '+ New Run', new_run_path, class: "btn btn-primary" %>
-              <% else %> 
-              <%= link_to 'Sign Up to Post a Run', signup_path, class: "btn btn-primary" %>
-          <% end %>
-          <P>
+        
   </div>
 </div>
 
-
-
-
+   <% if user_signed_in? %>
+              <%= link_to '+ New Run', new_run_path, class: "btn btn-primary" %>
+<% end %>
+<P>
   <div class="col-md-12">
   <table class="table">
           <thead>
@@ -34,7 +30,6 @@
 
           <tbody>
             <% @runs.each do |run| %>
-              <tr>
                 <td><%= run.user.try(:email) %></td>
                 <td><%= run.Run_Type %></td>
                 <td><%= run.Location %></td>
@@ -44,7 +39,7 @@
                 <td><%= run.Run_Date %></td>
                 <td><%= link_to 'Show', run %></td>
                 <% if run.user == current_user %>
-                <td><%= link_to 'Edit', edit_run_path(run) %></td>
+                <td><%= link_to 'Edit', edit_run_path(run) %></td> 
                 <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                  <% end %>
               </tr>
