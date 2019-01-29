@@ -30,7 +30,7 @@
 
           <tbody>
             <% @runs.each do |run| %>
-                <td><%= run.user.try(:email) %></td>
+                <td><%= run.user.try(:username) %></td>
                 <td><%= run.Run_Type %></td>
                 <td><%= run.Location %></td>
                 <td><%= run.Start_Time %></td>
