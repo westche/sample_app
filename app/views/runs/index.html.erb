@@ -41,10 +41,10 @@
                 <td><%= run.Pace %></td>
                 <td><%= run.Miles %></td>
                 <td><%= run.Run_Date %></td>
-                <td><%= link_to 'Show', run %></td>
+                <td><%= link_to 'Join Run', run %></td>
                 <% if run.user == current_user %>
-                <td><%= link_to 'Edit', edit_run_path(run) %></td> 
-                <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Edit Run', edit_run_path(run) %></td> 
+                <td><%= link_to 'Delete Run', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                  <% end %>
               </tr>
             <% end %>
