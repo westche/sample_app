@@ -3,7 +3,7 @@
   <div class="card-body">
     <p>
         <strong>User:</strong>
-        <%= @run.user.username %>
+        <%= link_to @run.user.username, user_path(@run.user.username) %>
       </p>
 
       <p>

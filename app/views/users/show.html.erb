@@ -1,19 +1,8 @@
-
 <div class="container">
+		<h1><%= @user.username %></h1>
+		<p><%= @user.name %></p>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Ready.Set.Go.</h1>
-    <p class="lead">Create a Run | Discover a run near you</p>
-        
-  </div>
 </div>
-
-   <% if user_signed_in? %>
-              <%= link_to '+ New Run', new_run_path, class: "btn btn-primary" %>
-
-           
-<% end %>
 
 
 <P>
