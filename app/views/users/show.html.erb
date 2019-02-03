@@ -23,7 +23,12 @@
 
           <tbody>
             <% @runs.each do |run| %>
-                <td><%= run.user.try(:username) %></td>
+                <td><%= run.user.try(:username) %><p> 
+                  <% if current_user.following?(@user) %> 
+                  "unfollow" 
+                  <% else %>  
+                  <%= link_to "Follow", follow_user_path(@user.username), method: :post %> </td> 
+                  <% end %>
                 <td><%= run.Run_Type %></td>
                 <td><%= run.Location %></td>
                 <td><%= run.Start_Time %></td>
