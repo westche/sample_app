@@ -1,50 +1,61 @@
+
+<% if user_signed_in? %>
+
+              <div class="container">
+              		<h1><%= @user.username %></h1>
+              		<p><%= @user.name %></p>
+
+              </div>
+
+
+              <P>
+                <div class="col-md-12">
+                <table class="table">
+                        <thead>
+                          <tr>
+                            <th>User</th>
+                            <th>Run Type</th>
+                            <th>Location</th>
+                            <th>Start Time</th>
+                            <th>Pace</th>
+                            <th>Miles</th>
+                            <th>Date</th>
+                            <th colspan="3"></th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% @runs.each do |run| %>
+                              <td><%= run.user.try(:username) %><p> 
+                                <% if current_user.following?(@user) %> 
+                                "unfollow" 
+                                <% else %>  
+                                <%= link_to "Follow", follow_user_path(@user.username), method: :post %> </td> 
+                                <% end %>
+                              <td><%= run.Run_Type %></td>
+                              <td><%= run.Location %></td>
+                              <td><%= run.Start_Time %></td>
+                              <td><%= run.Pace %></td>
+                              <td><%= run.Miles %></td>
+                              <td><%= run.Run_Date %></td>
+                              <td><%= link_to 'Show', run %></td>
+                              <% if run.user == current_user %>
+                              <td><%= link_to 'Edit', edit_run_path(run) %></td> 
+                              <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                               <% end %>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+
+                      <br>
+                       
+              </div>
+
+              <% else %>
 <div class="container">
-		<h1><%= @user.username %></h1>
-		<p><%= @user.name %></p>
+  <P>
+<p align="center">User profiles cannot be viewed without signing in!</p>
 
 </div>
-
-
-<P>
-  <div class="col-md-12">
-  <table class="table">
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Run Type</th>
-              <th>Location</th>
-              <th>Start Time</th>
-              <th>Pace</th>
-              <th>Miles</th>
-              <th>Date</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @runs.each do |run| %>
-                <td><%= run.user.try(:username) %><p> 
-                  <% if current_user.following?(@user) %> 
-                  "unfollow" 
-                  <% else %>  
-                  <%= link_to "Follow", follow_user_path(@user.username), method: :post %> </td> 
-                  <% end %>
-                <td><%= run.Run_Type %></td>
-                <td><%= run.Location %></td>
-                <td><%= run.Start_Time %></td>
-                <td><%= run.Pace %></td>
-                <td><%= run.Miles %></td>
-                <td><%= run.Run_Date %></td>
-                <td><%= link_to 'Show', run %></td>
-                <% if run.user == current_user %>
-                <td><%= link_to 'Edit', edit_run_path(run) %></td> 
-                <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                 <% end %>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-        <br>
-         
-</div>
+        <% end %>
