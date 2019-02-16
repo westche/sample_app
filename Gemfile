@@ -15,7 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activeadmin'
-gem 'acts_as_follower'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 
 group :development, :test do
