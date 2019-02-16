@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'feed', to: 'feed#show'
+   get 'feed', to: 'feed#show'
   
    resources :users, only: :show, param: :username do
     member do
