@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :users, only: :show, param: :username do
+   resources :users, only: :show, param: :username do
     member do
       post 'follow', to: 'follows#create'
-      delete 'follow', to: 'follows#destroy'
-    end 
+      delete 'unfollow', to: 'follows#destroy'
+    end
   end
 
 

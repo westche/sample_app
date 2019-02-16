@@ -28,7 +28,7 @@
                           <% @runs.each do |run| %>
                               <td><%= run.user.try(:username) %><p> 
                                 <% if current_user.following?(@user) %> 
-                                "unfollow" 
+                                <%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
                                 <% else %>  
                                 <%= link_to "Follow", follow_user_path(@user.username), method: :post %> </td> 
                                 <% end %>
