@@ -21,7 +21,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 end
 
 group :development do
