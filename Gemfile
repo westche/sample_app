@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
 
 ruby '2.5.3'
 
@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activeadmin'
 
-
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 
 group :development, :test do
